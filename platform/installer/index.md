@@ -67,12 +67,6 @@ This step does the following:
 There is no harm in running these on multiple times. Each run will check the state of Microsoft Message Queue service, the Distributed Transaction Coordinator service and the Performance Counters and adjust settings or start services as required. In some case the prerequisites may prompt for a restart to complete a change.
 
 Note: The NServiceBus prerequisites do not have a version number and do not toggle to a disabled state after installation.
-
-
-#### ServiceMatrix 
-
-The PlatformInstaller will no longer install ServiceMatrix. ServiceMatrix is available as an extension on the Visual Studio Gallery. Read this article on [how to install ServiceMatrix](/servicematrix/installing-servicematrix-2.0.md). 
-
  
 #### ServiceInsight
 
@@ -87,6 +81,8 @@ Installs the ServicePulse Package. This MSI can be downloaded directly from here
 #### ServiceControl
 
 Installs the ServiceControl Package. This MSI can be downloaded directly from here: [ServiceControl Releases](https://github.com/Particular/ServiceControl/releases/latest).
+
+WARN: ServiceMatrix has been discontinued and is no longer actively supported. We are currently investing our efforts to provide routing visualization for existing solutions as well. For more details, please download the [routing visualization tool](https://github.com/ParticularLabs/RoutingVisualization). You will still be able to install the ServiceMatrix extensions directly from the Visual Studio Gallery until the end of 2015. 
 
 
 ## TroubleShooting

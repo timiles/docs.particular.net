@@ -20,11 +20,12 @@ The Particular Service Platform source code, current and previous releases and t
 | | | | 
 |:--- |:--- |:--- |
 | ![](/menu/nservicebus-logo.png) | [Releases](https://github.com/Particular/NServiceBus/tags) | [Release Notes](https://github.com/Particular/NServiceBus/releases)|
-| ![](/menu/servicematrix-logo.png) | [Releases](https://github.com/Particular/ServiceMatrix/tags)|[Release Notes](https://github.com/Particular/ServiceMatrix/releases)|
 | ![](/menu/serviceinsight-logo.png) | [Releases](https://github.com/Particular/ServiceInsight/tags)|[Release Notes](https://github.com/Particular/ServiceInsight/releases)|
 | ![](/menu/servicepulse-logo.png) | [Releases](https://github.com/Particular/ServicePulse/tags)|[Release Notes](https://github.com/Particular/ServicePulse/releases)|
 | ![](/menu/servicecontrol-logo.png) | [Releases](https://github.com/Particular/ServiceControl/tags)|[Release Notes](https://github.com/Particular/ServiceControl/releases)|
 
+
+WARN: ServiceMatrix has been discontinued and is no longer actively supported. For more details, [please read this](link). However, you will still be able to install the extensions directly from the Visual Studio Gallery until the end of 2015. 
 
 ### NServiceBus Transports
 

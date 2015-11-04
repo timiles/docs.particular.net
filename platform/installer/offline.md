@@ -58,7 +58,4 @@ This MSI can be downloaded directly from here: [ServiceInsight Releases](https:/
 
 This MSI can be downloaded directly from here: [ServicePulse Releases](https://github.com/Particular/ServicePulse/releases/latest).
 
-
-### ServiceMatrix 
-
-ServiceMatrix is no longer part of the platform installer. Read this article on [how to install ServiceMatrix](/servicematrix/installing-servicematrix-2.0.md). 
+WARN: ServiceMatrix has been discontinued and is no longer actively supported. We are currently investing our efforts to provide routing visualization for existing solutions as well. For more details, please download the [routing visualization tool](https://github.com/ParticularLabs/RoutingVisualization). You will still be able to install the ServiceMatrix extensions directly from the Visual Studio Gallery until the end of 2015. 
