@@ -26,9 +26,20 @@ class Program
 
         busConfiguration.UseTransport<SqlServerTransport>()
             .DefaultSchema("sender")
-            .UseSpecificConnectionInformation(
-                EndpointConnectionInfo.For("receiver")
-                    .UseSchema("receiver"));
+            .UseSpecificConnectionInformation(endpoint =>
+            {
+                if (endpoint == "error")
+                {
+                    return ConnectionInfo.Create().UseSchema("dbo");
+                }
+                if (endpoint == "audit")
+                {
+                    return ConnectionInfo.Create().UseSchema("dbo");
+                }
+                string schema = endpoint.Split(new[] { '.' }, StringSplitOptions.RemoveEmptyEntries)[0].ToLowerInvariant();
+                return ConnectionInfo.Create().UseSchema(schema);
+            })
+        ;
         busConfiguration.UsePersistence<NHibernatePersistence>()
             .UseConfiguration(hibernateConfig);
 
