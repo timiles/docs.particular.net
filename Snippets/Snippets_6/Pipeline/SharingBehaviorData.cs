@@ -8,23 +8,23 @@
 
 #region SharingBehaviorData
 
-    public class ParentBehavior : Behavior<PhysicalMessageProcessingContext>
+    public class ParentBehavior : Behavior<IncomingPhysicalMessageContext>
     {
-        public override async Task Invoke(PhysicalMessageProcessingContext context, Func<Task> next)
+        public override async Task Invoke(IncomingPhysicalMessageContext context, Func<Task> next)
         {
             // set some shared information on the context
-            context.Set(new SharedData());
+            context.Extensions.Set(new SharedData());
 
             await next();
         }
     }
 
-    public class ChildBehavior : Behavior<LogicalMessageProcessingContext>
+    public class ChildBehavior : Behavior<IncomingLogicalMessageContext>
     {
-        public override async Task Invoke(LogicalMessageProcessingContext context, Func<Task> next)
+        public override async Task Invoke(IncomingLogicalMessageContext context, Func<Task> next)
         {
             // access the shared data
-            SharedData data = context.Get<SharedData>();
+            SharedData data = context.Extensions.Get<SharedData>();
 
             await next();
         }
