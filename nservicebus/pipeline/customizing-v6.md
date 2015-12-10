@@ -45,14 +45,14 @@ The following lists describe some of the common stages which you can build your 
 
 
 ### Incoming Pipeline Stages
-* Physical message processing: Behaviors on this stage have access the raw message body before it is deserialized. This stage provides `IncomingPhysicalMessageContext` to it's behaviors.
-* Logical message processing: This stage provides information about the received message type and it's deserialized instance. It provides `IncomingLogicalMessageContext` to it's behaviors.
-* Handler invocation: Each received message can be handled by multiple handlers. This stage will be executed once for every associated handler and provides `InvokeHandlerContext` to the behaviors.
+1. Physical message processing: Behaviors on this stage have access the raw message body before it is deserialized. This stage provides `IncomingPhysicalMessageContext` to it's behaviors.
+2. Logical message processing: This stage provides information about the received message type and it's deserialized instance. It provides `IncomingLogicalMessageContext` to it's behaviors.
+3. Handler invocation: Each received message can be handled by multiple handlers. This stage will be executed once for every associated handler and provides `InvokeHandlerContext` to the behaviors.
 
 ### Outgoing Pipeline Stages
-* Operation specific processing: There is a dedicated stage for each bus operation (e.g. Send, Publish, Subscribe, ...). Behaviors can use one of the following contexts: `OutgoingSendContext`, `OutgoingPublishContext`, `OutgoingReplyContext`, `SubscribeContext`, `UnsubscribeContext`.
-* Logical message processing: Behaviors on this stage have access to the message which should be sent. Use `OutgoingLogicalMessageContext` in your behavior to enlist in this stage.
-* Physical message processing: Enables you to access the serialized message. This stage provides `OutgoingPhysicalMessageContext` to it's behaviors.
+1. Operation specific processing: There is a dedicated stage for each bus operation (e.g. Send, Publish, Subscribe, ...). Behaviors can use one of the following contexts: `OutgoingSendContext`, `OutgoingPublishContext`, `OutgoingReplyContext`, `SubscribeContext`, `UnsubscribeContext`.
+2. Logical message processing: Behaviors on this stage have access to the message which should be sent. Use `OutgoingLogicalMessageContext` in your behavior to enlist in this stage.
+3. Physical message processing: Enables you to access the serialized message. This stage provides `OutgoingPhysicalMessageContext` to it's behaviors.
 
 
 NOTE: As in version 5, you can still configure steps by ordering them using `WellKnownSteps`. We recommend to not rely on certain steps but to choose the appropriate stage instead.
